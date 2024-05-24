@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.geetagyaan.views.fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.geetagyaan.views.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_verseFragment"
+            app:destination="@id/verseFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verseFragment"
+        android:name="com.example.geetagyaan.views.VerseFragment"
+        android:label="fragment_verse"
+        tools:layout="@layout/fragment_verse" >
+        <action
+            android:id="@+id/action_verseFragment_to_verseDetailsFragment"
+            app:destination="@id/verseDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/verseDetailsFragment"
+        android:name="com.example.geetagyaan.views.VerseDetailsFragment"
+        android:label="fragment_verse_details"
+        tools:layout="@layout/fragment_verse_details" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.geetagyaan.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_savedChapterFragment"
+            app:destination="@id/savedChapterFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_savedVerseFragment"
+            app:destination="@id/savedVerseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedChapterFragment"
+        android:name="com.example.geetagyaan.SavedChapterFragment"
+        android:label="fragment_saved_chapter"
+        tools:layout="@layout/fragment_saved_chapter" >
+        <action
+            android:id="@+id/action_savedChapterFragment_to_verseFragment"
+            app:destination="@id/verseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedVerseFragment"
+        android:name="com.example.geetagyaan.SavedVerseFragment"
+        android:label="fragment_saved_verse"
+        tools:layout="@layout/fragment_saved_verse" >
+        <action
+            android:id="@+id/action_savedVerseFragment_to_verseDetailsFragment"
+            app:destination="@id/verseDetailsFragment" />
+    </fragment>
+</navigation>
